@@ -1,0 +1,35 @@
+.inputContainer {
+  display: flex;
+  margin: 1rem 0;
+}
+
+.inputContainer input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+.inputContainer input::placeholder {
+  color: #999;
+}
+
+.inputContainer button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.inputContainer input:focus {
+  outline: 2px solid var(--color-primary);
+}
+
+.inputContainer button:hover {
+  opacity: 0.9;
+}

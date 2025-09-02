@@ -1,0 +1,83 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  align-items: center;
+}
+
+/* Input de busca */
+.filters input[type='text'] {
+  padding: 0.4rem 0.8rem;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  font-size: 1rem;
+  flex: 1 1 200px;
+  max-width: 250px;
+}
+
+.filters input[type='text']:focus {
+  outline: 2px solid var(--color-primary);
+}
+
+/* Select de ordenação */
+.filters select {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.filters select:focus {
+  outline: 2px solid var(--color-primary);
+}
+
+/* Container de botões de status */
+.statusButtons {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+}
+
+/* Botões de status */
+.statusButtons button {
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--color-primary);
+  background: none;
+  color: var(--color-text);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hover nos botões */
+.statusButtons button:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+/* Botão ativo (aria-pressed) */
+.statusButtons button[aria-pressed='true'] {
+  background-color: var(--color-primary);
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

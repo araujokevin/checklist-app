@@ -1,0 +1,43 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fonte padrão */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+input,
+button {
+  font-family: inherit;
+}
+
+/* Variáveis de tema */
+:root {
+  --color-bg: #fafafa;
+  --color-text: #1e1e1e;
+  --color-primary: #40c057;
+}
+
+[data-theme='dark'] {
+  --color-bg: #1c1d21;
+  --color-text: #e8e8e8;
+  --color-primary: #34a853;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
