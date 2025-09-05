@@ -41,40 +41,40 @@ export default function App() {
    */
 
   // Adiciona uma nova tarefa
-  const handleAddTask = (text) => {
+  function handleAddTask(text) {
     if (text.trim() === '') return;
     const newTask = { id: Date.now(), text, completed: false };
     setTasks([newTask, ...tasks]);
-  };
+  }
 
   // Remove uma tarefa pelo ID
-  const handleDelete = (id) => {
+  function handleDelete(id) {
     setTasks(tasks.filter((task) => task.id !== id));
-  };
+  }
 
   // Alterna o status de conclusão da tarefa
-  const handleToggle = (id) => {
+  function handleToggle(id) {
     setTasks(
       tasks.map((task) =>
         task.id === id ? { ...task, completed: !task.completed } : task
       )
     );
-  };
+  }
 
   // Edita o texto de uma tarefa existente
-  const handleEdit = (id, newText) => {
+  function handleEdit(id, newText) {
     if (newText.trim() === '') return;
     setTasks(
       tasks.map((task) => (task.id === id ? { ...task, text: newText } : task))
     );
-  };
+  }
 
   // Remove todas as tarefas (com confirmação do usuário)
-  const handleDeleteAll = () => {
+  function handleDeleteAll() {
     if (window.confirm('Tem certeza que deseja excluir todas as tarefas?')) {
       setTasks([]);
     }
-  };
+  }
 
   /**
    * Função auxiliar para normalizar strings:
@@ -83,12 +83,13 @@ export default function App() {
    * - Converte para minúsculas
    * Isso garante que a busca seja "accent-insensitive" e "case-insensitive".
    */
-  const normalize = (s) =>
-    s
+  function normalize(s) {
+    return s
       .normalize('NFD') // separa letras de acentos (ex: á → a +  ́)
       .replace(/\p{Diacritic}/gu, '') // remove os acentos
       .trim() // remove espaços extras no início/fim
       .toLowerCase(); // deixa tudo minúsculo
+  }
 
   /**
    * Lista de tarefas filtrada e ordenada.

@@ -4,11 +4,11 @@ import styles from '../styles/TaskInput.module.css';
 export default function TaskInput({ onAddTask }) {
   const [text, setText] = useState('');
 
-  const handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
     onAddTask(text); // A validação de texto vazio é feita no App.jsx
     setText(''); // Limpa o input após submissão
-  };
+  }
 
   return (
     <form
